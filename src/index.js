@@ -1,14 +1,11 @@
-const express = require("express")
-const knex = require("./conexao")
+const express = require('express');
+const rotas = require('./rotas/rotas');
+const cors = require('cors');
 
+const app = express();
 
-const app = express()
+app.use(express.json());
+app.use(cors());
+app.use(rotas);
 
-app.use(express.json())
-
-app.get('/', async (req, res) => {
-    const usuarios = await knex(usuarios)
-    return res.json(usuarios)
-})
-
-app.listen(3000)    
+app.listen(3000);
