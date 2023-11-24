@@ -8,9 +8,12 @@ const rotas = express()
 
 
 rotas.post("/usuarios", usuarios.cadastrarUsuario)
-
 rotas.post("/login", login.login)
 
+
 rotas.use(verificaLogin)
+
+rotas.get("/perfil", usuarios.obterUsuario)
+
 
 module.exports = rotas

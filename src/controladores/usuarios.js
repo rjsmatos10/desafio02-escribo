@@ -6,9 +6,6 @@ const senhajwt = require("../senhajwt")
 const cadastrarUsuario = async (req , res) => {
     const {nome, email , senha , telefones} = req.body
 
-    console.log(nome , email, senha, telefones)
-
-    
     if(!nome){
         return res.status(404)
         .json({mensagem: "É necessario preencher todos os campos!"})
@@ -68,8 +65,6 @@ const cadastrarUsuario = async (req , res) => {
             ultimo_login: user.ultimo_login || null,
             token,
         }
-        
-        console.log(bodyresposta)
 
         return res.status(201).json(bodyresposta)
     } catch (error) {
@@ -78,11 +73,15 @@ const cadastrarUsuario = async (req , res) => {
     }
 }
 
+const obterUsuario = async (req, res) => {
+    return res.status(200).json(req.usuario)
+}
+
 
 
 
 
 module.exports = {
     cadastrarUsuario,
-    
+    obterUsuario,
 }

@@ -20,12 +20,13 @@ const verificaLogin = async (req, res, next) => {
 			return res.status(404).json({mensagem:'Usuario não encontrado'})
 		}
 
-		const { senha, ...usuario } = rows[0]
+		const usuario = await knex('usuarios').where({id}).select('id','nome','email','telefones','data_criacao','data_atualizacao','ultimo_login').first()
 
 		req.usuario = usuario
 
 		next()
 	} catch (error) {
+		console.log(error)
 		return res.status(500).json({mensagem:'Erro interno do servidor'})
 	}
 }
