@@ -1,5 +1,3 @@
-CREATE DATABASE desafio02escribo
-
 drop table if exists usuarios;
 
 
