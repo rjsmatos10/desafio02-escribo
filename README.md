@@ -23,8 +23,8 @@ O desafio consiste em desenvolver uma API RESTful para autenticação de usuári
 
 #ENDPOINTS
 
-1. Sign Up (Criação de Cadastro):
-
+1. Sign Up (Criação de Cadastro):    
+   #### `POST` `/usuarios`
 
 ● Input:
     {
@@ -57,6 +57,7 @@ O desafio consiste em desenvolver uma API RESTful para autenticação de usuári
     
 
 2. Sign In (Autenticação):
+   #### `POST` `/login`
 
 
 ● Input:
@@ -93,6 +94,7 @@ O desafio consiste em desenvolver uma API RESTful para autenticação de usuári
 
 
 3. Buscar Usuário:
+   #### `GET` `/perfil`
 
 
 ● Requisição: Header Authentication com valor "Bearer {token}"
