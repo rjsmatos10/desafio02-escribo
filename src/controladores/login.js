@@ -25,7 +25,7 @@ const login = async (req, res) => {
 
 		const token = jwt.sign({ id: usuario.id }, senhajwt, { expiresIn: '30m' })
 
-        //modificar o campo ultimo_login dando um update na tabela com a data!!!!!
+
         let ultimo_login = new Date()
 
         let user = await knex('usuarios')
